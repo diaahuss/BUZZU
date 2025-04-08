@@ -1,47 +1,34 @@
-// Initialize EmailJS with the provided API Key
-emailjs.init("sz2ImWOwFnVKy4qrF");
-
-// Helper function to clear input fields
-function resetFields() {
-  document.querySelectorAll("input").forEach(input => input.value = "");
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-// Form submission for rewards
-document.getElementById("submit-reward-btn").addEventListener("click", () => {
-  const name = document.getElementById("name-display").value;
-  const email = document.getElementById("email-display").value;
-  const voucherCode = document.getElementById("voucher-code").value;
-  const walletAddress = document.getElementById("wallet-address").value;
-  const businessName = document.getElementById("business-name").value;
-  const businessEmail = document.getElementById("business-email").value;
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-  if (name && email && voucherCode && walletAddress && businessName && businessEmail) {
-    // Send email using EmailJS
-    emailjs.send("service_4b371jn", "template_y0f3pw9", {
-      customerName: name,
-      customerEmail: email,
-      voucherCode: voucherCode,
-      walletAddress: walletAddress,
-      businessName: businessName,
-      businessEmail: businessEmail,
-    })
-    .then(response => {
-      alert("Reward Submitted Successfully! Email sent.");
-      resetFields();
-      document.getElementById("rewards-screen").classList.add("hidden");
-      document.getElementById("transaction-screen").classList.remove("hidden");
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
 
-      // Populate transaction screen with the submitted data
-      document.getElementById("transaction-name").textContent = name;
-      document.getElementById("transaction-email").textContent = email;
-      document.getElementById("transaction-voucher-code").textContent = voucherCode;
-      document.getElementById("transaction-wallet").textContent = walletAddress;
-      document.getElementById("transaction-business-name").textContent = businessName;
-      document.getElementById("transaction-business-email").textContent = businessEmail;
-    }, error => {
-      alert("Email sending failed!");
-    });
-  } else {
-    alert("Please fill all the fields.");
-  }
-});
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
