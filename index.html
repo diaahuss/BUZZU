@@ -3,57 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRYPTOZ Rewards</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Buzzer App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Login Screen -->
-  <div id="login-screen" class="screen">
-    <div class="banner">CRYPTOZ</div>
-    <input type="email" id="login-email" placeholder="Email" />
-    <input type="password" id="login-password" placeholder="Password" />
-    <button id="login-btn">Login</button>
-    <button id="go-to-sign-up">Sign Up</button>
-  </div>
-
-  <!-- Sign-Up Screen -->
-  <div id="sign-up-screen" class="screen hidden">
-    <div class="banner">SIGN UP</div>
-    <input type="text" id="sign-up-name" placeholder="Name" />
-    <input type="email" id="sign-up-email" placeholder="Email" />
-    <input type="password" id="sign-up-password" placeholder="Password" />
-    <input type="password" id="confirm-password" placeholder="Confirm Password" />
-    <button id="sign-up-btn">Sign Up</button>
-    <button class="back-btn">Back</button>
-  </div>
-
-  <!-- Rewards Screen -->
-  <div id="rewards-screen" class="screen hidden">
-    <div class="banner">REWARDS</div>
-    <input type="text" id="name-display" placeholder="Name" />
-    <input type="email" id="email-display" placeholder="Email" />
-    <input type="text" id="voucher-code" placeholder="Voucher Code" />
-    <input type="text" id="wallet-address" placeholder="Wallet Address" />
-    <input type="text" id="business-name" placeholder="Business Name" />
-    <input type="email" id="business-email" placeholder="Business Email" />
-    <button id="submit-reward-btn">Submit</button>
-    <button class="back-btn">Back</button>
-  </div>
-
-  <!-- Transaction Screen -->
-  <div id="transaction-screen" class="screen hidden">
-    <div class="banner">TRANSACTIONS</div>
-    <p><strong>Name:</strong> <span id="transaction-name"></span></p>
-    <p><strong>Email:</strong> <span id="transaction-email"></span></p>
-    <p><strong>Voucher Code:</strong> <span id="transaction-voucher-code"></span></p>
-    <p><strong>Wallet Address:</strong> <span id="transaction-wallet"></span></p>
-    <p><strong>Business Name:</strong> <span id="transaction-business-name"></span></p>
-    <p><strong>Business Email:</strong> <span id="transaction-business-email"></span></p>
-    <p class="note">Please allow a few days to process your voucher. Thank you.</p>
-    <button class="back-btn">Back</button>
-  </div>
-
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="script.js"></script>
+  <div id="app"></div>
+  <script src="app.js"></script>
 </body>
 </html>
