@@ -16,12 +16,6 @@ body {
   padding: 20px;
 }
 
-/* Header styling */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 /* App container */
 #app {
   max-width: 800px;
@@ -30,4 +24,57 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Authentication container */
+.auth-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Authentication sections */
+.auth-section {
+  flex: 1 1 300px;
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Input fields */
+.auth-section input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.auth-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Message paragraph */
+#message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
 }
