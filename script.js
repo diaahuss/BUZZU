@@ -1,19 +1,19 @@
 // script.js
 
-// Import the functions you need from the SDKs you need
+// Import Firebase modules
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  onAuthStateChanged
 } from "firebase/auth";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
   // ... other configuration properties
 };
 
@@ -32,6 +32,10 @@ const signinButton = document.getElementById('signin-button');
 
 const signoutButton = document.getElementById('signout-button');
 const message = document.getElementById('message');
+const welcomeMessage = document.getElementById('welcome-message');
+
+const authSection = document.getElementById('auth-section');
+const userSection = document.getElementById('user-section');
 
 // Sign up event
 signupButton.addEventListener('click', () => {
@@ -68,4 +72,17 @@ signoutButton.addEventListener('click', () => {
     .catch((error) => {
       message.textContent = `Error: ${error.message}`;
     });
+});
+
+// Listen for authentication state changes
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    authSection.style.display = 'none';
+    userSection.style.display = 'block';
+    welcomeMessage.textContent = `Welcome, ${user.email}`;
+  } else {
+    authSection.style.display = 'flex';
+    userSection.style.display = 'none';
+    welcomeMessage.textContent = '';
+  }
 });
